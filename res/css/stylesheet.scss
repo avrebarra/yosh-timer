@@ -1,0 +1,212 @@
+body{
+    font-family: Open Sans Semibold;
+    margin: 0px;
+    background-color: #FFC125;
+
+    text-align: center;
+}
+
+.button{
+    @extend .non.draggable;
+
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 5px;
+
+    font-size: 13px;
+    color: white;
+    background-color: #FD3231;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #ff5150;
+    }
+
+    &:active{
+        background-color: #e01f1e;
+    }
+}
+
+.screen{
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+
+}
+
+.container{
+    position: absolute;
+    display: block;
+    margin: 0px;
+    width: 100%;
+
+    top: 47%;
+    transform: translateY(-50%);
+}
+
+.draggable{
+    -webkit-app-region: drag;
+}
+
+.non.draggable{
+    -webkit-app-region: no-drag;
+}
+
+#input-time{
+    #time-input{
+        margin: 10px;
+        margin-top: 20px;
+        display: block;
+        font-size: 15px;
+        font-family: Open Sans;
+        font-weight: bold;
+
+        input{
+            @extend .non.draggable;
+
+            line-height: normal;
+            padding: 5px;
+            width: 60px;
+            height: 70px;
+
+            font-family: Roboto Webfont;
+
+            font-size: 55px;
+            text-align: center;
+            color: white;
+            background-color: transparent;
+            border: none;
+
+            border: 0px;
+        }
+
+        input[type="text"], input[type="password"] { 
+            outline: none;
+        }
+
+        ::-webkit-input-placeholder {
+            color: white;
+        }
+
+        :-moz-placeholder {
+            color: white;  
+        }
+
+        ::-moz-placeholder {
+            color: white;  
+        }
+
+        :-ms-input-placeholder {  
+            color: white;  
+        }
+    }
+}
+
+#timerun{
+    #timer{
+        margin: 16px;
+        margin-top: 24px;
+        display: block;
+        font-size: 15px;
+
+        .slot{
+            line-height: normal;
+            padding: 5px;
+            width: 60px;
+            height: 70px;
+
+            font-family: Roboto Webfont;
+
+            font-size: 55px;
+            text-align: center;
+            color: white;
+
+            border: 0px;
+        }
+    }
+
+    #pause-button{
+        background-color: #FD3231;
+        border: none;
+
+        &:hover{
+            background-color: #ff5150;
+        }
+
+        &:active{
+            background-color: #e01f1e;
+        }
+    }
+
+    #resume-button{
+        border: none;
+
+        background-color: #FD3231;
+
+        &:hover{
+            background-color: #ff5150;
+        }
+
+        &:active{
+            background-color: #e01f1e;
+        }
+    }
+
+    #stop-button{
+        border: none;
+
+        background-color: #FD3231;
+
+        &:hover{
+            background-color: #ff5150;
+        }
+
+        &:active{
+            background-color: #e01f1e;
+        }
+    }
+}
+
+#invoked{
+    #invoke-message{
+        font-family: Open Sans;
+        font-size: 25px;
+        color: #ffffff;
+
+        margin: 15px;
+    }
+}
+
+#background{
+    @extend .draggable;
+
+    position: absolute;
+
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+// Control Buttons List
+#close-button{
+    @extend .non.draggable;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: 0.4s;
+
+    cursor: pointer;
+
+    &:hover{
+        transform: rotate(360deg);
+    }
+}
