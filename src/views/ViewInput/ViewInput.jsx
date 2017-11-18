@@ -1,6 +1,5 @@
-import React, {Component} from 'react'
-import { Redirect } from 'react-router-dom'
-import TimeInput from 'components/TimeInput'
+import React from 'react'
+import TimeInputContainer from 'containers/TimeInputContainer'
 import PropTypes from 'prop-types';
 
 import Page from 'components/Page'
@@ -9,27 +8,21 @@ import Button from 'components/Button'
 
 import 'views/common.css'
 
-class ViewInput extends Component {
+class ViewInput extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {value: '', ready : false}
-  }
-
-  submitTimeValue(value){
-    if (value) this.setState({ready : true})
-    if (this.props.onTimeSubmit) this.props.onTimeSubmit(value)
+    this.state = {value: 0}
   }
 
   render(){
     return (
-      <div className="ViewInput View" value={this.state.value}>
+      <div className="ViewInput View">
         <Page>
-          <TimeInput onValueChanges={(value)=>this.setState({value})}/>
+          <TimeInputContainer onValueChange={this.props.onValueChange}/>
         </Page>
         <ButtonRack>
-          <Button color="black" label="START" onClick={()=>this.submitTimeValue(this.state.value)}/>
-          {this.state.ready && <Redirect to={"/count/" + this.state.value}/>}
+          <Button label="START" onClick={()=>this.props.onInputSubmit()}/>
         </ButtonRack>
       </div>
     )
@@ -37,7 +30,8 @@ class ViewInput extends Component {
 }
 
 ViewInput.propTypes = {
-  onTimeSubmit: PropTypes.func
+  onInputSubmit: PropTypes.func.isRequired,
+  onValueChange: PropTypes.func.isRequired
 }
 
 export default ViewInput;

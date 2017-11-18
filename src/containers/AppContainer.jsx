@@ -7,7 +7,8 @@ class AppContainer extends Component{
     super(props)
 
     this.state = {
-      view : 'input'
+      view : 'input',
+      time : 0
     }
 
     this.onTimerStart = this.onTimerStart.bind(this)
@@ -18,7 +19,7 @@ class AppContainer extends Component{
   // handler functions
   onTimerStart(time){
     const view = 'count-down'
-    this.setState({view})
+    this.setState({view, time})
   }
 
   onTimerUp(){
@@ -38,6 +39,7 @@ class AppContainer extends Component{
         onTimerStart={this.onTimerStart}
         onTimerUp={this.onTimerUp}
         onTimerStop={this.onTimerStop}
+        time={this.state.time}
       />
     )
   }

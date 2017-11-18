@@ -12,8 +12,8 @@ import './index.css'
 const App = (props) => (
   <div className='App'>
     <ViewSwitch show={props.view}>
-      <ViewInput name="input"/>
-      <ViewCountDown name="count-down"/>
+      <ViewInput name="input" submitInputTime={props.onTimerStart}/>
+      <ViewCountDown name="count-down" time={props.time}/>
       <ViewTimeUp name="time-up"/>
     </ViewSwitch>
   </div>
