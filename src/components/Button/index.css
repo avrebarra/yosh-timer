@@ -13,6 +13,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /*no drag*/
+    -webkit-app-region: no-drag;
 }
 
 .Button:hover {

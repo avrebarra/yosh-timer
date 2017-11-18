@@ -19,7 +19,7 @@ class ViewTimeUp extends Component {
           <TimeUpIcon/>
         </Page>
         <ButtonRack>
-          <Button color="black" label="STOP" onClick={()=>this.props.onStop()}/>
+          <Button color="black" label="DISMISS" onClick={()=>this.props.onStop()}/>
         </ButtonRack>
       </div>
     )

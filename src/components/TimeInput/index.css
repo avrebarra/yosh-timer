@@ -1,0 +1,23 @@
+.TimeInput input.RangedNumberInputBox[type="text"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    text-align: center;
+    display: inline-block;
+    width: 80px;
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    padding: 10px;
+    font-size: 55px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    color: white;
+    /*no drag*/
+    -webkit-app-region: no-drag;
+}
+
+.TimeInput input.RangedNumberInputBox::placeholder {
+    color: white;
+}

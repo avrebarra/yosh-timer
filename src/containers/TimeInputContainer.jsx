@@ -35,15 +35,34 @@ class TimeInputContainer extends Component{
     return value
   }
 
+  getValueAs(modifier, value){
+    switch (modifier) {
+      case 'HOURS':
+        return Math.floor(value / 3600)
+      case 'MINUTES':
+        return Math.floor((value % 3600) / 60)
+      case 'SECONDS':
+        return (value % 3600) % 60
+      default:
+        return 0
+    }
+  }
+
   // render function
   render(){
     return (
-      <TimeInput onBoxUpdate={this.onBoxUpdate}/>
+      <TimeInput
+        defaultHour={this.getValueAs('HOURS', this.props.defaultValue)}
+        defaultMinute={this.getValueAs('MINUTES', this.props.defaultValue)}
+        defaultSecond={this.getValueAs('SECONDS', this.props.defaultValue)}
+        onBoxUpdate={this.onBoxUpdate}
+      />
     )
   }
 }
 
 TimeInputContainer.propTypes = {
+  defaultValue: PropTypes.number,
   onValueChange: PropTypes.func.isRequired
 }
 

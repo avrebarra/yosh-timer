@@ -7,6 +7,7 @@ import Button from 'components/Button'
 import CountDownContainer from 'containers/CountDownContainer'
 
 import 'views/common.css'
+import displayIcon from 'internals/display-icon.png'
 
 class ViewCountDown extends Component {
   constructor(props){
@@ -36,6 +37,7 @@ class ViewCountDown extends Component {
     return (
       <div className="ViewCountDown View">
         <Page>
+          <img className='DisplayIcon' alt='icon' src={displayIcon}/>
           <CountDownContainer ref={(countDown)=>this.countDown = countDown} time={this.props.time} onTimeUp={this.props.onTimerUp}/>
         </Page>
         <ButtonRack>

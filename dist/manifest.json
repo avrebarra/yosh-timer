@@ -14,5 +14,6 @@
         }
     },
     "offline_enabled": true,
+    "icons": { "16": "assets/img/timie-16.png", "128": "assets/img/timie-128.png" },
     "minimum_chrome_version": "33"
 }

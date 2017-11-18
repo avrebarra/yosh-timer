@@ -6,7 +6,7 @@ class ViewInputContainer extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {value: 0}
+    this.state = {value: this.props.preloadedTime}
 
     this.onInputSubmit = this.onInputSubmit.bind(this)
     this.onValueChange = this.onValueChange.bind(this)
@@ -24,6 +24,7 @@ class ViewInputContainer extends Component {
   render(){
     return (
       <ViewInput
+        preloadedTime={this.props.preloadedTime}
         onInputSubmit={this.onInputSubmit}
         onValueChange={this.onValueChange}
       />
@@ -32,6 +33,7 @@ class ViewInputContainer extends Component {
 }
 
 ViewInputContainer.propTypes = {
+  preloadedTime: PropTypes.number,
   submitInputTime: PropTypes.func.isRequired
 }
 

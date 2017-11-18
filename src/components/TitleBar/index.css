@@ -1,0 +1,8 @@
+.TitleBar {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row-reverse;
+  z-index: 2
+}

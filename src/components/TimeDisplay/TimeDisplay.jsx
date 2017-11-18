@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import './index.css'
+
 // Display Box
-const DisplayBox = (props)=>{
+const TimeDisplayBox = (props)=>{
   return (
       <input className="TimeDisplayBox" type="text" placeholder="00" value={("0" + props.value).slice(-2)} readOnly='true' />
     );
 }
 
-DisplayBox.propTypes = {
+TimeDisplayBox.propTypes = {
   value: PropTypes.number
 }
 
@@ -30,12 +32,12 @@ class TimeDisplay extends Component {
 
   render() {
     return (
-      <div className="CountDown">
-        <DisplayBox value={this.getValueAs('HOURS', this.props.time)}/>
+      <div className="TimeDisplay">
+        <TimeDisplayBox value={this.getValueAs('HOURS', this.props.time)}/>
         :
-        <DisplayBox value={this.getValueAs('MINUTES', this.props.time)}/>
+        <TimeDisplayBox value={this.getValueAs('MINUTES', this.props.time)}/>
         :
-        <DisplayBox value={this.getValueAs('SECONDS', this.props.time)}/>
+        <TimeDisplayBox value={this.getValueAs('SECONDS', this.props.time)}/>
       </div>
     );
   }

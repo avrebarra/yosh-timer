@@ -2,6 +2,10 @@ import React, {Component} from 'react'
 
 import App from 'components/App'
 
+let chromeWindowInstance = null
+
+try {chromeWindowInstance = window.chrome.app.window.current()}catch (e){}
+
 class AppContainer extends Component{
   constructor(props){
     super(props)
@@ -14,6 +18,8 @@ class AppContainer extends Component{
     this.onTimerStart = this.onTimerStart.bind(this)
     this.onTimerUp = this.onTimerUp.bind(this)
     this.onTimerStop = this.onTimerStop.bind(this)
+
+    console.log('chromeWindowInstance', chromeWindowInstance);
   }
 
   // handler functions
@@ -24,6 +30,7 @@ class AppContainer extends Component{
 
   onTimerUp(){
     const view = 'time-up'
+    if (chromeWindowInstance) chromeWindowInstance.focus()
     this.setState({view})
   }
 
@@ -40,6 +47,7 @@ class AppContainer extends Component{
         onTimerUp={this.onTimerUp}
         onTimerStop={this.onTimerStop}
         time={this.state.time}
+        window={chromeWindowInstance}
       />
     )
   }

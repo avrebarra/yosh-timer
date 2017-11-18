@@ -1,6 +1,6 @@
 import React from 'react';
 
-import icon from './icon.png'
+import icon from 'internals/display-icon.png'
 import './index.css'
 
 const TimeUpIcon = (props) => {

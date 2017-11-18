@@ -1,0 +1,28 @@
+.TimeDisplay input.TimeDisplayBox[type="text"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    text-align: center;
+    display: inline-block;
+    width: 80px;
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    padding: 10px;
+    font-size: 55px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    color: white;
+    /*non selectable*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*no drag*/
+    -webkit-app-region: no-drag;
+}
+
+.TimeDisplay input.TimeDisplayBox::placeholder {
+    color: white;
+}
