@@ -1,28 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import ViewSwitch from 'containers/ViewSwitch'
+
 import ViewCountDown from 'views/ViewCountDown'
 import ViewInput from 'views/ViewInput'
 import ViewTimeUp from 'views/ViewTimeUp'
 
 import './index.css'
-import closeGlyph from './close-glyph.png'
 
-class App extends Component {
-  constructor(props){
-    super(props)
+const App = (props) => (
+  <div className='App'>
+    <ViewSwitch show={props.view}>
+      <ViewInput name="input"/>
+      <ViewCountDown name="count-down"/>
+      <ViewTimeUp name="time-up"/>
+    </ViewSwitch>
+  </div>
+);
 
-    this.state = {appState : 'input', time : null}
-  }
-
-  render() {
-    return (
-      <div className='App'>
-        <img id="close-button" src={closeGlyph} height="15" alt=""/>
-        {this.state.appState === 'input' && <ViewInput onTimeSubmit={(time)=>{if (time) this.setState({time, appState:'count'})}}/>}
-        {(this.state.appState === 'count') && <ViewCountDown time={this.state.time} onStop={()=>this.setState({appState:'input'})} onTimeUp={()=>this.setState({appState:'time-up'})}/>}
-        {this.state.appState === 'time-up' && <ViewTimeUp onStop={()=>this.setState({appState:'input'})}/>}
-      </div>
-      );
-  }
+App.propTypes = {
+  onTimerStart: PropTypes.func.isRequired,
+  onTimerUp: PropTypes.func.isRequired,
+  onTimerStop: PropTypes.func.isRequired
 }
 
 export default App;
