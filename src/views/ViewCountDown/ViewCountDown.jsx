@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Redirect } from 'react-router-dom'
 import CountDown from 'components/CountDown'
 import PropTypes from 'prop-types';
 
@@ -12,15 +11,20 @@ import 'views/common.css'
 class ViewCountDown extends Component {
   constructor(props) {
     super(props)
-    const initialValue = props.match.params.time;
+    const initialValue = props.time;
     this.state = {value: initialValue, countDownState : 'count'}
+  }
+
+  onStop(){
+    this.setState({countDownState : 'stop'})
+    this.props.onStop()
   }
 
   render(){
     return (
       <div className="ViewCountDown View" value={this.state.value}>
         <Page>
-          <CountDown value={this.state.value} onValueChanges={(value)=>this.setState({value})} state={this.state.countDownState}/>
+          <CountDown value={this.state.value} onValueChanges={(value)=>this.setState({value})} state={this.state.countDownState} onTimeUp={()=>this.props.onTimeUp()}/>
         </Page>
         <ButtonRack>
           {(this.state.countDownState === 'pause') &&
@@ -29,10 +33,8 @@ class ViewCountDown extends Component {
           {(this.state.countDownState === 'count') &&
             <Button color="black" label="PAUSE" onClick={()=>this.setState({countDownState : 'pause'})}/>
           }
-          <Button color="black" label="STOP" onClick={()=>this.setState({countDownState : 'stop'})}/>
+          <Button color="black" label="STOP" onClick={()=>this.onStop()}/>
 
-          {/* redirect if no value */}
-          {this.state.value <= 0 && <Redirect to="/"/>}
         </ButtonRack>
       </div>
     )
@@ -40,7 +42,8 @@ class ViewCountDown extends Component {
 }
 
 ViewCountDown.propTypes = {
-  onTimeSubmit: PropTypes.func
+  onTimeUp: PropTypes.func.isRequired,
+  onStop: PropTypes.func.isRequired
 }
 
 export default ViewCountDown;

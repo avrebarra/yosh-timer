@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 import TimeDisplayBox from './TimeDisplayBox'
 
-import './index.css'
-
 class CountDown extends Component {
   constructor(props) {
     super(props)
@@ -32,7 +30,7 @@ class CountDown extends Component {
 
   tickDownFunction(){
     const countDownValue = this.state.countDownValue - 1
-    if(countDownValue === 0) this.stop()
+    if(countDownValue === 0) this.timeUp()
     this.setState({countDownValue})
   }
 
@@ -48,6 +46,11 @@ class CountDown extends Component {
   stop(){
     this.pause()
     this.setState({countDownValue : 0})
+  }
+
+  timeUp(){
+    this.stop()
+    this.props.onTimeUp()
   }
 
   componentWillReceiveProps(nextProps){
@@ -83,7 +86,8 @@ class CountDown extends Component {
 
 CountDown.propTypes = {
   state: PropTypes.string,
-  onValueChanges: PropTypes.func
+  onValueChanges: PropTypes.func,
+  onTimeUp: PropTypes.func.isRequired
 }
 
 export default CountDown;

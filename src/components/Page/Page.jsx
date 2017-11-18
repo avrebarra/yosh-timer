@@ -4,7 +4,8 @@ import './index.css'
 const Page = (props) => {
   return (
     <div className='Page'>
-      {props.children}
+      <div class="background"></div>
+      <div class="foreground">{props.children}</div>
     </div>
   )
 }
