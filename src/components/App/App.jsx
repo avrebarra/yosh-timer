@@ -14,7 +14,7 @@ const App = (props) => (
     <ViewSwitch show={props.view}>
       <ViewInput name="input" submitInputTime={props.onTimerStart}/>
       <ViewCountDown name="count-down" time={props.time} onTimerUp={props.onTimerUp} onStop={props.onTimerStop}/>
-      <ViewTimeUp name="time-up" />
+      <ViewTimeUp name="time-up" onStop={props.onTimerStop}/>
     </ViewSwitch>
   </div>
 );
