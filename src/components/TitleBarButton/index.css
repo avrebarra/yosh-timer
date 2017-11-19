@@ -1,0 +1,6 @@
+.TitleBarButton {
+    -webkit-app-region: no-drag;
+    margin: 5px;
+    padding: 3px;
+    cursor: pointer;
+}

@@ -1,0 +1,14 @@
+.View{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.View .DisplayIcon{
+  display: block;
+  height: 50px;
+  width: 100%;
+  object-fit: contain;
+}

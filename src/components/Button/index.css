@@ -1,0 +1,26 @@
+.Button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /*color*/
+    background-color: #fc3231;
+    color: #fff;
+    cursor: pointer;
+    /*non selectable*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*no drag*/
+    -webkit-app-region: no-drag;
+}
+
+.Button:hover {
+    background-color: #ff5150;
+}
+
+.Button:active {
+    background-color: #e01f1e;
+}
