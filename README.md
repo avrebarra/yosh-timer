@@ -3,8 +3,11 @@ Simple timer chrome app to track time of, like, everything! This is a Chrome App
 
 Install published version [here](https://goo.gl/kCssC5) (Chrome webstore)
 
+### Screenshots
+![Image of Screenshot](./docs/screenshot.jpg)
+
 ### Stacks used
-This app was built using these technology stacks: 
+This app was built using these technology stacks:
 - JavaScript
 - ReactJS
 - Babel ES6
