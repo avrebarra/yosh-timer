@@ -10,6 +10,7 @@ class ViewInputContainer extends Component {
 
     this.onInputSubmit = this.onInputSubmit.bind(this)
     this.onValueChange = this.onValueChange.bind(this)
+    this.onKeyUp = this.onKeyUp.bind(this)
   }
 
   // handler functions
@@ -21,12 +22,17 @@ class ViewInputContainer extends Component {
     this.setState({value})
   }
 
+  onKeyUp(event){
+    if(this.state.value && event.keyCode === 13) this.props.submitInputTime(this.state.value)
+  }
+
   render(){
     return (
       <ViewInput
         preloadedTime={this.props.preloadedTime}
         onInputSubmit={this.onInputSubmit}
         onValueChange={this.onValueChange}
+        onKeyUp={this.onKeyUp}
       />
     )
   }

@@ -3,7 +3,7 @@
     "short_name": "Yosh Timer",
     "description": "Simple timer app to track time of, like, everything!",
     "author": "Avreghly Barra (@shrotavre)",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "Apache 2.0",
     "private": true,
     "dependencies": {
