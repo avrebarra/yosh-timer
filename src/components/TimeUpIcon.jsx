@@ -1,7 +1,7 @@
 import React from 'react';
 
-import icon from 'internals/display-icon.png'
-import './index.css'
+import icon from 'internals/icons/display-icon.png'
+import 'styles/TimeUpIcon.css'
 
 const TimeUpIcon = (props) => {
   return (

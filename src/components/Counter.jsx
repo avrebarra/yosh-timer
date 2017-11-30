@@ -29,7 +29,6 @@ class Counter extends Component {
 
   // controls
   activate(){
-    console.log('start', this.state.state);
     if (![STATE.IDLE, STATE.PAUSED].includes(this.state.state)) return
 
     this.counter = setInterval(this._tick, 1000)
@@ -39,7 +38,6 @@ class Counter extends Component {
   }
 
   pause(){
-    console.log('pause', this.state.state);
     if (![STATE.ACTIVE].includes(this.state.state)) return
 
     clearInterval(this.counter)
@@ -50,7 +48,6 @@ class Counter extends Component {
   }
 
   stop(){
-    console.log('stop', this.state.state);
     if (![STATE.ACTIVE, STATE.PAUSED].includes(this.state.state)) return
 
     if (this.counter) clearInterval(this.counter)
@@ -61,7 +58,6 @@ class Counter extends Component {
   }
 
   _timeUp(){
-    console.log('invoked', this.state.state);
     if (![STATE.ACTIVE].includes(this.state.state)) return
 
     clearInterval(this.counter)

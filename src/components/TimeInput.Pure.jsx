@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import RangedNumberInputBox from 'components/RangedNumberInputBox'
 
-import './index.css'
+import 'styles/TimeInput.css'
 
 const TimeInput = (props) => (
   <div className="TimeInput">

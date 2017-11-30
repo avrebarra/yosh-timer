@@ -1,13 +1,13 @@
 import React from 'react'
-import TimeInputContainer from 'containers/TimeInputContainer'
+import TimeInput from 'components/TimeInput'
 import PropTypes from 'prop-types';
 
 import Page from 'components/Page'
 import ButtonRack from 'components/ButtonRack'
 import Button from 'components/Button'
 
-import 'views/common.css'
-import displayIcon from 'internals/display-icon.png'
+import 'styles/View.css'
+import displayIcon from 'internals/icons/display-icon.png'
 
 class ViewInput extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class ViewInput extends React.Component {
       <div className="ViewInput View" onKeyUp={this.props.onKeyUp}>
         <Page>
           <img className='DisplayIcon' alt='icon' src={displayIcon}/>
-          <TimeInputContainer defaultValue={this.props.preloadedTime} onValueChange={this.props.onValueChange}/>
+          <TimeInput defaultValue={this.props.preloadedTime} onValueChange={this.props.onValueChange}/>
         </Page>
         <ButtonRack>
           <Button label="START" onClick={()=>this.props.onInputSubmit()}/>

@@ -1,4 +1,3 @@
-/* This is manifest will be used exclusively by Chrome App parser */
 {
     "update_url": "https://clients2.google.com/service/update2/crx",
 
@@ -6,7 +5,7 @@
     "short_name": "Yosh Timer",
     "description": "Simple timer app to track time of, like, everything!",
     "author": "Avreghly Barra (@shrotavre)",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "manifest_version": 2,
     "app": {
         "background": {

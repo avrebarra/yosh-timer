@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 
-import App from 'components/App'
+import AppPure from 'components/App.Pure'
 
 let chromeWindowInstance = null
 
 try {chromeWindowInstance = window.chrome.app.window.current()}catch (e){}
 
-class AppContainer extends Component{
+class App extends Component{
   constructor(props){
     super(props)
 
@@ -18,8 +18,6 @@ class AppContainer extends Component{
     this.onTimerStart = this.onTimerStart.bind(this)
     this.onTimerUp = this.onTimerUp.bind(this)
     this.onTimerStop = this.onTimerStop.bind(this)
-
-    console.log('chromeWindowInstance', chromeWindowInstance);
   }
 
   // handler functions
@@ -42,7 +40,7 @@ class AppContainer extends Component{
   // render function
   render(){
     return (
-      <App view={this.state.view}
+      <AppPure view={this.state.view}
         onTimerStart={this.onTimerStart}
         onTimerUp={this.onTimerUp}
         onTimerStop={this.onTimerStop}
@@ -53,4 +51,4 @@ class AppContainer extends Component{
   }
 }
 
-export default AppContainer;
+export default App;

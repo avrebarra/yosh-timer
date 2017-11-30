@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import Page from 'components/Page'
 import ButtonRack from 'components/ButtonRack'
 import Button from 'components/Button'
-import CountDownContainer from 'containers/CountDownContainer'
+import CountDown from 'components/CountDown'
 
-import 'views/common.css'
-import displayIcon from 'internals/display-icon.png'
+import 'styles/View.css'
+import displayIcon from 'internals/icons/display-icon.png'
 
 class ViewCountDown extends Component {
   constructor(props){
@@ -38,7 +38,7 @@ class ViewCountDown extends Component {
       <div className="ViewCountDown View">
         <Page>
           <img className='DisplayIcon' alt='icon' src={displayIcon}/>
-          <CountDownContainer ref={(countDown)=>this.countDown = countDown} time={this.props.time} onTimeUp={this.props.onTimerUp}/>
+          <CountDown ref={(countDown)=>this.countDown = countDown} time={this.props.time} onTimeUp={this.props.onTimerUp}/>
         </Page>
         <ButtonRack>
           {(this.state.state === 'pause') &&

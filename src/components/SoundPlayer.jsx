@@ -1,5 +1,5 @@
 import React from 'react';
-import sound from './sound.mp3';
+import sound from 'internals/sounds/1.mp3';
 
 
 const SoundPlayer = (props) => {

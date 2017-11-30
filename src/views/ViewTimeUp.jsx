@@ -8,7 +8,7 @@ import Button from 'components/Button'
 import TimeUpIcon from 'components/TimeUpIcon'
 import SoundPlayer from 'components/SoundPlayer'
 
-import 'views/common.css'
+import 'styles/View.css'
 
 class ViewTimeUp extends Component {
   render(){

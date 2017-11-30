@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import './index.css'
+import 'styles/TimeDisplay.css'
 
 // Display Box
 const TimeDisplayBox = (props)=>{

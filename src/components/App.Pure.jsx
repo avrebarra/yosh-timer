@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ViewSwitch from 'containers/ViewSwitch'
+import ViewSwitch from 'components/ViewSwitch'
 
 import ViewCountDown from 'views/ViewCountDown'
 import ViewInput from 'views/ViewInput'
@@ -10,10 +10,10 @@ import ViewTimeUp from 'views/ViewTimeUp'
 import TitleBar from 'components/TitleBar'
 import TitleBarButton from 'components/TitleBarButton'
 
-import './index.css'
-import iconClose from 'internals/close-glyph.png'
-import iconMinimize from 'internals/minimize-glyph.png'
-import iconSetting from 'internals/setting-glyph.png'
+import 'styles/App.css'
+import iconClose from 'internals/icons/close-glyph.png'
+import iconMinimize from 'internals/icons/minimize-glyph.png'
+// import iconSetting from 'internals/icons/setting-glyph.png'
 
 const App = (props) => (
   <div className='App'>

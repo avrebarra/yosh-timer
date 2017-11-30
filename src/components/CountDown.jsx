@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Counter from 'components/Counter';
 import TimeDisplay from 'components/TimeDisplay';
 
-class CountDownContainer extends Component{
+class CountDown extends Component{
   constructor(props){
     super(props)
 
     this.state = {time : this.props.time}
-    
+
     this.onTimeUpdate = this.onTimeUpdate.bind(this)
     this.onTimeUp = this.onTimeUp.bind(this)
   }
@@ -39,10 +39,10 @@ class CountDownContainer extends Component{
   }
 }
 
-CountDownContainer.propTypes = {
+CountDown.propTypes = {
   time: PropTypes.number.isRequired,
   onTimeUp: PropTypes.func,
   onValueChange: PropTypes.func
 }
 
-export default CountDownContainer;
+export default CountDown;

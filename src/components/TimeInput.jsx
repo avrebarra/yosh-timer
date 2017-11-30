@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
-import TimeInput from 'components/TimeInput';
+import TimeInput from 'components/TimeInput.Pure';
 
 class TimeInputContainer extends Component{
   constructor(props){

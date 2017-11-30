@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ViewInput from './ViewInput.jsx'
+import ViewInput from './ViewInput.Pure.jsx'
 import PropTypes from 'prop-types';
 
 class ViewInputContainer extends Component {

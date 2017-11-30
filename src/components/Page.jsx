@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css'
+import 'styles/Page.css'
 
 const Page = (props) => {
   return (
